@@ -1,4 +1,4 @@
-import { varchar, pgTable, serial, text } from "drizzle-orm/pg-core";
+import { integer, varchar, pgTable, serial, text } from "drizzle-orm/pg-core";
 
 export const MockInterview=pgTable('mockInterviews',{
     id:serial('id').primaryKey(),
@@ -26,7 +26,14 @@ export const UserAnswer=pgTable('userAnswers',{
 export const SubscriptionData=pgTable('subscriptions', {
     subscriptionId: serial('subscriptionId').primaryKey(),
     customerEmail: varchar('customerEmail').notNull(),
-    startDate: varchar('startDate').notNull(),
-    endDate:varchar('endDate').notNull(),
-    subscriptionType: varchar('subscriptionType').notNull()
+    stripeCustomerId: varchar('stripeCustomerId'),
+    stripeSubscriptionId: varchar('stripeSubscriptionId'),
+    priceId: varchar('priceId'),
+    status: varchar('status').notNull(),
+    billingInterval: varchar('billingInterval').notNull(),
+    quotaLimit: integer('quotaLimit').notNull(),
+    currentPeriodStart: varchar('currentPeriodStart').notNull(),
+    currentPeriodEnd:varchar('currentPeriodEnd').notNull(),
+    createdAt: varchar('createdAt').notNull(),
+    updatedAt: varchar('updatedAt').notNull()
 })
