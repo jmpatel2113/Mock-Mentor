@@ -42,3 +42,8 @@ playwright-server*.log
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# undeveloped parts
+app/(api)/
+app/upgrade/
+app/_data/
