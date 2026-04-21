@@ -1,72 +1,93 @@
 import React from 'react'
 import Header from '../dashboard/_components/header'
-
-const faqItems = [
-  {
-    question: "How do I get started?",
-    answer:
-      'Create an account, open the Dashboard, and create your first mock interview. The How It Works page explains the full flow from setup through feedback review.',
-  },
-  {
-    question: "How many interviews can I create once I subscribe?",
-    answer:
-      'The intended paid experience is unlimited mock interviews and repeat access to past sessions through the dashboard.',
-  },
-  {
-    question: "What payments do you accept?",
-    answer:
-      'The current copy references card payments plus Apple Pay, Cash App Pay, and Link through Stripe checkout.',
-  },
-  {
-    question: "Can I retake interviews?",
-    answer:
-      'Yes. The product is built around repeated practice, so retaking interviews is part of the intended workflow.',
-  },
-  {
-    question: "Do interviews include behavioral questions?",
-    answer:
-      'At the moment the project is centered on technical interviews. Behavioral interview coverage is planned work, not the current focus.',
-  },
-  {
-    question: "How do I contact support?",
-    answer:
-      'The page currently points users to the project email address: jmpatel2113@gmail.com.',
-  },
-];
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "../../components/ui/collapsible"
 
 function Faq() {
   return (
-    <div className='page-shell min-h-screen'>
+    <div>
       <Header></Header>
-      <div className='page-content space-y-8 pt-10'>
-        <section className='surface-panel px-6 py-8 text-center sm:px-8'>
-          <span className='eyebrow'>FAQ</span>
-          <h1 className='mt-5 text-4xl font-semibold tracking-tight text-slate-900 sm:text-6xl'>
-            Common questions, without the clutter.
-          </h1>
-          <p className='mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg'>
-            This pass focuses on making the product easier to understand quickly. These are the current answers reflected by the codebase and existing product copy.
-          </p>
-        </section>
-
-        <section className='grid gap-4'>
-          {faqItems.map((item) => (
-            <details key={item.question} className='surface-panel group p-0 open:bg-white/90'>
-              <summary className='cursor-pointer list-none px-6 py-5 text-left text-xl font-semibold text-slate-900 marker:content-none sm:px-8'>
-                <div className='flex items-center justify-between gap-6'>
-                  <span>{item.question}</span>
-                  <span className='rounded-full bg-[#f3ebdd] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500'>
-                    Open
-                  </span>
-                </div>
-              </summary>
-              <div className='border-t border-[#ebe1d0] px-6 py-5 text-sm leading-8 text-slate-600 sm:px-8'>
-                {item.answer}
-              </div>
-            </details>
-          ))}
-        </section>
+      <div className='text-center my-20 text-7xl text-indigo-500'>
+        Frequently Asked Questions
       </div>
+      <div className='pt-4 mx-48'>
+        <Collapsible className='my-10'>
+          <CollapsibleTrigger className='flex justify-between text-2xl p-2 gap-7 w-full bg-secondary rounded-lg my-1 text-left'>
+            How do I get started?
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className='flex flex-col gap-2 p-4 text-xl border rounded-lg border-gray-950 bg-white'>
+              <p>Get started by first creating an account, where we just need your email before you can start practicing your interviews.
+                Once you have an account, go to <strong>"Dashboard"</strong> section and add your 1st interview. For more information,
+                go to <strong>"How it Works?"</strong> section and you will find specific details on how to navigate through the website.
+              </p>
+            </div>
+          </CollapsibleContent>
+        </Collapsible>
+        <Collapsible className='my-10'>
+          <CollapsibleTrigger className='flex justify-between text-2xl p-2 gap-7 w-full bg-secondary rounded-lg my-1 text-left'>
+            How many interviews can I create once I pay for the subscription? 
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className='flex flex-col gap-2 p-4 text-xl border rounded-lg border-gray-950 bg-white'>
+              <p>Once you have subscribed to a plan, you can create unlimited amount of interviews and you can access
+                them through the <strong>"Dashboard"</strong> section as well as retake them whenver you'd like.
+              </p>
+            </div>
+          </CollapsibleContent>
+        </Collapsible>
+        <Collapsible className='my-10'>
+          <CollapsibleTrigger className='flex justify-between text-2xl p-2 gap-7 w-full bg-secondary rounded-lg my-1 text-left'>
+            What type of payments do you accept? 
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className='flex flex-col gap-2 p-4 text-xl border rounded-lg border-gray-950 bg-white'>
+              <p>At the moment, we are accepting payments made from <strong>Credit Cards</strong>(Visa, Mastercard, American Express, 
+                Discover, Diners Club, JCB, and China UnionPay), <strong>Apple Pay</strong>, <strong>Cash App Pay</strong>, and 
+                <strong> Link</strong>.
+              </p>
+            </div>
+          </CollapsibleContent>
+        </Collapsible>
+        <Collapsible className='my-10'>
+          <CollapsibleTrigger className='flex justify-between text-2xl p-2 gap-7 w-full bg-secondary rounded-lg my-1 text-left'>
+            Can I retake my interviews or do I need to create a new interview?
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className='flex flex-col gap-2 p-4 text-xl border rounded-lg border-gray-950 bg-white'>
+              You can retake your interviews as many times as you'd like and you will get a feedback for every retake.
+            </div>
+          </CollapsibleContent>
+        </Collapsible>
+        <Collapsible className='my-10'>
+          <CollapsibleTrigger className='flex justify-between text-2xl p-2 gap-7 w-full bg-secondary rounded-lg my-1 text-left'>
+            Will the mock interview contain behavioral questions? Or is it just technical questions?
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className='flex flex-col gap-2 p-4 text-xl border rounded-lg border-gray-950 bg-white'>
+              <p>At the moment, <strong>Mock Mentor</strong> provides only technical interviews. However, we are working
+                to implement behavioral questions in the mock interviews pretty soon. Stay tuned!
+              </p>
+            </div>
+          </CollapsibleContent>
+        </Collapsible>
+        <Collapsible className='my-10'>
+          <CollapsibleTrigger className='flex justify-between text-2xl p-2 gap-7 w-full bg-secondary rounded-lg my-1 text-left'>
+            How do I contact you if I have any questions or concerns? 
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className='flex flex-col gap-2 p-4 text-xl border rounded-lg border-gray-950 bg-white'>
+              You can contact us at the email link posted below. Just click on the link and it will redirect you to gmail page.
+              <p>Email Link: <a href="https://mailto:jmpatel2113@gmail.com">jmpatel2113@gmail.com</a>
+              </p>
+            </div>
+          </CollapsibleContent>
+        </Collapsible>
+      </div>
+      
     </div>
   )
 }
