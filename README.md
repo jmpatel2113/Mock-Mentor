@@ -52,11 +52,5 @@ Welcome to Mock Mentor!
     - Shadcn UI     : front-end
     - Tailwind CSS  : front-end
     - Drizzle ORM   : data management
-    - PostgreSQL    : database
+    - Neon          : database
     - Clerk         : User Login & Sign-ups
-
-
-- Next steps: 
-    1) Implementing subscriptions for the service
-    2) Deployment
-    3) Adding coding questions + difficulty level
