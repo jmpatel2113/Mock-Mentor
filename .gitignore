@@ -8,6 +8,8 @@
 
 # testing
 /coverage
+/test-results
+/playwright-report
 
 # next.js
 /.next/
@@ -24,9 +26,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pw-dev*.log
+playwright-server*.log
+*.tmp
+/.tailwind-debug.css
 
 # local env files
-.env*.local
+.env
+.env.*
+!.env.example
 
 # vercel
 .vercel
