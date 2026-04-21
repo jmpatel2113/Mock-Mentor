@@ -47,3 +47,5 @@ next-env.d.ts
 app/(api)/
 app/upgrade/
 app/_data/
+
+.codex/AGENTS.md
